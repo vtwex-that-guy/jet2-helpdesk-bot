@@ -58,7 +58,7 @@ async def reply(ctx: discord.ApplicationContext, user: discord.User, message: st
         await ctx.respond("❌ No open ticket found for this user.", ephemeral=True)
         return
 
-    await user.send(f"✈️ **Jet2 Helpdesk Reply**:
+    await user.send("✈️ **Jet2 Helpdesk Reply**":
 {message}")
     await ctx.respond(f"✅ Message sent to {user.name}", ephemeral=True)
 
