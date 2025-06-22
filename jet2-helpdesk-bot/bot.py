@@ -60,7 +60,7 @@ async def reply(ctx: discord.ApplicationContext, user: discord.User, message: st
 
     await user.send("✈️ **Jet2 Helpdesk Reply**":
 {message}")
-    await ctx.respond(f"✅ Message sent to {user.name}", ephemeral=True)
+    await ctx.respond("✅ Message sent to {user.name}", ephemeral=True)
 
 @bot.slash_command(guild_ids=[int(config["guild_id"])], description="Close a modmail ticket")
 @commands.has_any_role(*config["admin_roles"])
@@ -74,7 +74,7 @@ async def close(ctx: discord.ApplicationContext, user: discord.User):
 
     c.execute("DELETE FROM tickets WHERE user_id=?", (user.id,))
     conn.commit()
-    await ctx.respond(f"🛑 Ticket with {user.mention} has been closed.", ephemeral=True)
+    await ctx.respond("🛑 Ticket with {user.mention} has been closed.", ephemeral=True)
 
     try:
         await user.send("📪 Your Jet2 Helpdesk ticket has been closed. Thank you for contacting us.")
