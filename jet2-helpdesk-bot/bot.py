@@ -59,7 +59,7 @@ async def reply(ctx: discord.ApplicationContext, user: discord.User, message: st
         return
 
     await user.send("✈️ **Jet2 Helpdesk Reply**":
-{message}")
+{message})
     await ctx.respond("✅ Message sent to {user.name}", ephemeral=True)
 
 @bot.slash_command(guild_ids=[int(config["guild_id"])], description="Close a modmail ticket")
